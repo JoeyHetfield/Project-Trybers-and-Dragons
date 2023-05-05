@@ -14,8 +14,8 @@ class Mage extends Archetype {
   get energyType(): EnergyType {
     return this._energyType;
   }
-
-  static createdArchetypesInstances(): number {
+  
+  static createdArchetypeInstances(): number {
     return Mage._instancesMage;
   }
 }
