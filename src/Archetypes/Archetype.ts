@@ -27,7 +27,6 @@ abstract class Archetype {
     throw new Error('Not implemented');
   }
 
-  // O problema é que tinha faltado o get antes do energyType...
   abstract get energyType(): EnergyType;
 }
 

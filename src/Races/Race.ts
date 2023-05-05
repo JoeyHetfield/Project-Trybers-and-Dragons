@@ -6,7 +6,6 @@ abstract class Race {
     this._name = name;
     this._dexterity = dexterity;
   }
-  // não entendi porque o metodo tem que ser name e não getName, o mesmo pro dexterity
 
   get name(): string {
     return this._name;
