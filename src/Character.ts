@@ -61,6 +61,13 @@ class Character implements Fighter {
     }
     this.lifePoints = this._maxLifePoints;
   }
+
+  special(enemy: Fighter) : void {
+    const BolaDeFogo = 10;
+    const damage = this.strength + BolaDeFogo;
+    this._energy.amount -= 5;
+    return enemy.receiveDamage(damage);
+  }
 }
 
 export default Character;
