@@ -31,6 +31,19 @@ class Character implements Fighter {
       amount: getRandomInt(1, 10),
     };
   }
+
+  receiveDamage(attackPoints: number): number {
+    const damage = attackPoints - this.defense;
+    if (damage > 0) {
+      this.lifePoints -= damage;
+    } else {
+      this.lifePoints -= 1;
+    }
+    if (this.lifePoints <= 0) {
+      this.lifePoints = -1;
+    }
+    return this.lifePoints;
+  }
 }
 
 export default Character;
