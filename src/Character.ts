@@ -10,9 +10,9 @@ class Character implements Fighter {
   private _race: Race;
   private _archetype: Archetype;
   private _maxLifePoints: number;
-  private lifePoints: number;
-  private strength: number;
-  private defense: number;
+  lifePoints: number;
+  strength: number;
+  defense: number;
   private _dexterity: number;
   private _energy: Energy;
   private _name: string;
@@ -48,6 +48,18 @@ class Character implements Fighter {
   attack(enemy: Fighter): void {
     const damage = this.strength;
     return enemy.receiveDamage(damage);
+  }
+
+  levelUp(): void {
+    this.strength += getRandomInt(1, 10);
+    this.defense += getRandomInt(1, 10);
+    this._dexterity += getRandomInt(1, 10);
+    this._energy.amount = 10;
+    this._maxLifePoints += getRandomInt(1, 10);
+    if (this._maxLifePoints > this._race.maxLifePoints) {
+      this._maxLifePoints = this._race.maxLifePoints;
+    }
+    this.lifePoints = this._maxLifePoints;
   }
 }
 
