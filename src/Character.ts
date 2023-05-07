@@ -1,4 +1,4 @@
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import Race from './Races';
 import Archetype from './Archetypes';
 import Energy from './Energy';
@@ -45,9 +45,9 @@ class Character implements Fighter {
     return this.lifePoints;
   }
 
-  attack(enemy: Fighter): void {
-    const damage = this.strength;
-    return enemy.receiveDamage(damage);
+  attack(enemy: Fighter | SimpleFighter): void {
+    const damage = this._strength;
+    enemy.receiveDamage(damage);
   }
 
   levelUp(): void {
