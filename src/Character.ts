@@ -68,6 +68,10 @@ class Character implements Fighter {
     this._energy.amount -= 5;
     return enemy.receiveDamage(damage);
   }
+
+  get race(): Race {
+    return this._race;
+  }
 }
 
 export default Character;
