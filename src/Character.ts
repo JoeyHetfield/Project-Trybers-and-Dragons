@@ -88,6 +88,10 @@ class Character implements Fighter {
   get defense(): number {
     return this._defense;
   }
+
+  get dexterity(): number {
+    return this._dexterity;
+  }
 }
 
 export default Character;
