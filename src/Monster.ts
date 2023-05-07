@@ -1,3 +1,4 @@
+import Character from './Character';
 import { SimpleFighter } from './Fighter';
 
 class Monster implements SimpleFighter {
@@ -30,7 +31,7 @@ class Monster implements SimpleFighter {
     return this.lifePoints;
   }
 
-  attack(enemy: SimpleFighter): number {
+  attack(enemy: SimpleFighter | Character): number {
     const damage = this.strength;
     return enemy.receiveDamage(damage);
   }
