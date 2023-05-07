@@ -10,7 +10,7 @@ class Character implements Fighter {
   private _race: Race;
   private _archetype: Archetype;
   private _maxLifePoints: number;
-  lifePoints: number;
+  _lifePoints: number;
   strength: number;
   defense: number;
   private _dexterity: number;
@@ -22,7 +22,7 @@ class Character implements Fighter {
     this._dexterity = getRandomInt(1, 10);
     this._race = new Elf(this._name, this._dexterity);
     this._maxLifePoints = this._race.maxLifePoints / 2;
-    this.lifePoints = this._maxLifePoints;
+    this._lifePoints = this._maxLifePoints;
     this.strength = getRandomInt(1, 10);
     this.defense = getRandomInt(1, 10);
     this._archetype = new Mage(this._name);
@@ -35,12 +35,12 @@ class Character implements Fighter {
   receiveDamage(attackPoints: number): number {
     const damage = attackPoints - this.defense;
     if (damage > 0) {
-      this.lifePoints -= damage;
+      this._lifePoints -= damage;
     } else {
-      this.lifePoints -= 1;
+      this._lifePoints -= 1;
     }
     if (this.lifePoints <= 0) {
-      this.lifePoints = -1;
+      this._lifePoints = -1;
     }
     return this.lifePoints;
   }
@@ -59,7 +59,7 @@ class Character implements Fighter {
     if (this._maxLifePoints > this._race.maxLifePoints) {
       this._maxLifePoints = this._race.maxLifePoints;
     }
-    this.lifePoints = this._maxLifePoints;
+    this._lifePoints = this._maxLifePoints;
   }
 
   special(enemy: Fighter) : void {
@@ -75,6 +75,10 @@ class Character implements Fighter {
 
   get archetype(): Archetype {
     return this._archetype;
+  }
+
+  get lifePoints(): number {
+    return this._lifePoints;
   }
 }
 
