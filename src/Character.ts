@@ -72,6 +72,10 @@ class Character implements Fighter {
   get race(): Race {
     return this._race;
   }
+
+  get archetype(): Archetype {
+    return this._archetype;
+  }
 }
 
 export default Character;
