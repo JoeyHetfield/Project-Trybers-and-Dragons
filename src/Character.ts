@@ -11,7 +11,7 @@ class Character implements Fighter {
   private _archetype: Archetype;
   private _maxLifePoints: number;
   _lifePoints: number;
-  strength: number;
+  _strength: number;
   defense: number;
   private _dexterity: number;
   private _energy: Energy;
@@ -23,7 +23,7 @@ class Character implements Fighter {
     this._race = new Elf(this._name, this._dexterity);
     this._maxLifePoints = this._race.maxLifePoints / 2;
     this._lifePoints = this._maxLifePoints;
-    this.strength = getRandomInt(1, 10);
+    this._strength = getRandomInt(1, 10);
     this.defense = getRandomInt(1, 10);
     this._archetype = new Mage(this._name);
     this._energy = {
@@ -51,7 +51,7 @@ class Character implements Fighter {
   }
 
   levelUp(): void {
-    this.strength += getRandomInt(1, 10);
+    this._strength += getRandomInt(1, 10);
     this.defense += getRandomInt(1, 10);
     this._dexterity += getRandomInt(1, 10);
     this._energy.amount = 10;
@@ -79,6 +79,10 @@ class Character implements Fighter {
 
   get lifePoints(): number {
     return this._lifePoints;
+  }
+
+  get strength(): number {
+    return this._strength;
   }
 }
 
