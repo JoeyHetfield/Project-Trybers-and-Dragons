@@ -3,6 +3,7 @@ import Monster from './Monster';
 import Dragon from './Dragon';
 import PVP from './Battle/PVP';
 import PVE from './Battle/PVE';
+import Battle from './Battle';
 
 const player1 = new Character('Naruto');
 const player2 = new Character('Tenshinhan');
@@ -19,4 +20,10 @@ const pvp = new PVP(player1, player2);
 
 const pve = new PVE(player1, [monster1, monster2]);
 
-export { player1, player2, player3, monster1, monster2, pvp, pve };
+const runBattles = (battles: Battle[]) : void => {
+  battles.forEach((battle) => {
+    battle.fight();
+  });
+};
+
+export { player1, player2, player3, monster1, monster2, pvp, pve, runBattles };
