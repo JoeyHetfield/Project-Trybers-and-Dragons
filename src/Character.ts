@@ -62,7 +62,7 @@ class Character implements Fighter {
     this._lifePoints = this._maxLifePoints;
   }
 
-  special(enemy: Fighter) : void {
+  special(enemy: Fighter) : number {
     const BolaDeFogo = 10;
     const damage = this.strength + BolaDeFogo;
     this._energy.amount -= 5;

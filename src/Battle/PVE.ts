@@ -6,11 +6,11 @@ import Character from '../Character';
 
 class PVE extends Battle {
   private _player: Fighter | Character;
-  private _monsters: Monster[] | SimpleFighter[];
+  private _monsters: Monster[] | SimpleFighter[] | Fighter[];
 
   constructor(
     player: Fighter | Character, 
-    monsters: Monster[] | SimpleFighter[],
+    monsters: Monster[] | SimpleFighter[] | Fighter[],
   ) {
     super(player);
     this._player = player;
@@ -24,6 +24,15 @@ class PVE extends Battle {
   monstersHaveLife() : boolean {
     return this._monsters.some((monster) => monster.lifePoints > 0);
   }
-}
 
+  fight(): number {
+    this._monsters.forEach((monster) => {
+      while (this.playersHaveLife() && this.monstersHaveLife()) {
+        this._player.attack(monster);
+        monster.attack(this._player);
+      }
+    });
+    return super.fight();
+  }
+}
 export default PVE;
