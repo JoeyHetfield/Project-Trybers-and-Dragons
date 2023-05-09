@@ -1,13 +1,13 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Trybers and Dragons
+**A role-playing game structured using SOLID architecture principles and object-oriented programming.**
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+### Objective
+The objective of this TypeScript project is to apply SOLID architecture principles and object-oriented programming concepts in a role-playing game structure. By using these concepts, the project aims to create a more maintainable and extensible game. 
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+### To get started with the project, follow these steps:
+
+- Clone the repository to your local machine
+- Install the dependencies using npm install
+
+### Contributions: 
+- Contributions to the project are always welcome. If you have any feedback, suggestions, or issues, please submit them to the project's issue tracker.
